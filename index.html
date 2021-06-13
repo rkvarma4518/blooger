@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooger</title>
+    <!-- Link css  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- font-awsome  -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #000;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #fff;
+  background: #000;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+    color: #000;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+
+  }
+  nav ul{
+    position: absolute;
+    top: 45vh;
+    left: -100%;
+    background: #111;
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+    position: absolute;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+    color: #fff;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+</style>
+
+
+
+
+
+
+<body>
+    <!-- header  -->
+    <div class="head-text">
+        
+        <h1>Blooger.com</h1><br>
+        <p class="sub-head-text">Join us and enjoy our informative posts.</p>
+    </div>
+    
+    <nav>
+        <div class="logo">
+           Blooger
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+           <li><a class="active" href="#">Home</a></li>
+           <li><a href="#">BlogPost</a></li>
+           <li><a href="#">Category</a></li>
+           <li><a href="#">Feedback</a></li>
+        </ul>
+     </nav>
+
+    <!-- main part -->
+    <div class="main">
+        <img src="images/main-img.jpg" width="100%" height="100%" alt="" srcset="">
+        <div class="content">
+            
+            <div class="head-line">This is main-head</div>
+            <div class="sub-line">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Dolorem dicta eveniet inventore? Ducimus, impedit.</div>
+
+            <div class="blog-post">
+                <button class="btn-blog">Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- main html starat -->
+    <!-- carousel part for category  -->
+    <main>
+        <section>
+            <div class="blog">
+                <div class="carousel">
+                    <div class="blog-box">
+                        <div class="overflow-carousel">
+                            <div class="post1" id="carousel-post">
+                                <img src="images/post1.jpeg" width="100%" height="100%" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="blog-title">This is Title</div>
+                        <div class="btn-focus">Focus</div>
+                    </div>
+
+                    <div class="blog-box">
+                        <div class="overflow-carousel">
+                            <div class="post2" id="carousel-post">
+                                <img src="images/post2.jpeg" width="100%" height="100%" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="blog-title">This is Title</div>
+                        <div class="btn-focus">Focus</div>
+                    </div>
+
+                    <div class="blog-box">
+                        <div class="overflow-carousel">
+                            <div class="post3" id="carousel-post">
+                                <img src="images/post3.jpeg" width="100%" height="100%" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="blog-title">This is Title</div>
+                        <div class="btn-focus">Focus</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- grid container  -->
+
+        <div class="container">
+            <div class="left-section">
+                <p class="new-post-title">New Posts</p>
+                <div class="new-post">
+                    <div class="overflow">
+                        <div class="blog-img-1 img" id="new-post">
+                            <img src="images/new-post/new-post-1.jpeg" width="100%" height="100%" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="blog-page-title">New data recording system to better analyse road accidents</div>
+                    <div class="blog-page-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Neque voluptas deserunt beatae adipisci iusto totam placeat corrupti ipsum, tempora
+                        magnam incidunt aperiam tenetur a nobis, voluptate, numquam architecto fugit. Eligendi quidem
+                        ipsam ducimus minus magni illum similique veniam tempore unde?</div>
+                    <a href="">
+                        <div class="btn-blog-post">Read More</div>
+                    </a>
+                </div>
+                <hr>
+                <div class="new-post">
+                    <div class="overflow">
+                        <div class="blog-img-2 img" id="new-post">
+                            <img src="images/new-post/new-post-2.jpeg" width="100%" height="100%" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="blog-page-title">New data recording system to better analyse road accidents</div>
+                    <div class="blog-page-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Neque voluptas deserunt beatae adipisci iusto totam placeat corrupti ipsum, tempora
+                        magnam incidunt aperiam tenetur a nobis, voluptate, numquam architecto fugit. Eligendi quidem
+                        ipsam ducimus minus magni illum similique veniam tempore unde?</div>
+                    <a href="">
+                        <div class="btn-blog-post">Read More</div>
+                    </a>
+                </div>
+                <hr>
+                <div class="new-post">
+                    <div class="overflow">
+                        <div class="blog-img-3 img" id="new-post">
+                            <img src="images/new-post/new-post-3.jpeg" width="100%" height="100%" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="blog-page-title">New data recording system to better analyse road accidents</div>
+                    <div class="blog-page-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Neque voluptas deserunt beatae adipisci iusto totam placeat corrupti ipsum, tempora
+                        magnam incidunt aperiam tenetur a nobis, voluptate, numquam architecto fugit. Eligendi quidem
+                        ipsam ducimus minus magni illum similique veniam tempore unde?</div>
+                    <a href="">
+                        <div class="btn-blog-post">Read More </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="new-post">
+                    <div class="overflow">
+                        <div class="blog-img-4 img" id="new-post">
+                            <img src="images/new-post/new-post-4.jpeg" width="100%" height="100%" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="blog-page-title">New data recording system to better analyse road accidents</div>
+                    <div class="blog-page-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Neque voluptas deserunt beatae adipisci iusto totam placeat corrupti ipsum, tempora
+                        magnam incidunt aperiam tenetur a nobis, voluptate, numquam architecto fugit. Eligendi quidem
+                        ipsam ducimus minus magni illum similique veniam tempore unde?</div>
+                    <a href="">
+                        <div class="btn-blog-post">Read More</div>
+                    </a>
+                </div>
+                <hr>
+            </div>
+            <div class="right-section">
+                <div class="category">
+                    <p class="cats-title">Category</p>
+                    <div class="category-op">
+
+                        <a href="">
+                            <button class="cats">Live Update</button>
+                        </a><br>
+                        <a href="">
+                            <button class="cats">Sports</button>
+                        </a><br>
+                        <a href="">
+                            <button class="cats">Science & Technology</button>
+                        </a><br>
+                        <a href="">
+                            <button class="cats">Lifestyle</button>
+                        </a><br>
+                        <a href="">
+                            <button class="cats">Food</button>
+                        </a><br>
+
+
+                    </div>
+                </div>
+                <div class="pop-post">
+                    <p class="pop-post-title">Popular Post</p>
+                    <div class="block-post">
+                        <div class="pop-post-block">
+                            <div class="block1">
+                                <div class="block1-img">
+                                    <img src="images/pop-post/block1-img.jpeg" width="100%" height="100%" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="block1-title">Teacher Eligibility Test Qualifying Certificate Valid For
+                                Lifetime: Government.</div>
+                        </div>
+
+                        <div class="pop-post-block">
+                            <div class="block1">
+                                <div class="block2-img">
+                                    <img src="images/pop-post/block2-img.jpeg" width="100%" height="100%" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="block1-title">Teacher Eligibility Test Qualifying Certificate Valid For
+                                Lifetime: Government.</div>
+                        </div>
+
+                        <div class="pop-post-block">
+                            <div class="block1">
+                                <div class="block3-img">
+                                    <img src="images/pop-post/block3-img.jpeg" width="100%" height="100%" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="block1-title">Teacher Eligibility Test Qualifying Certificate Valid For
+                                Lifetime: Government.</div>
+                        </div>
+
+                        <div class="pop-post-block">
+                            <div class="block1">
+                                <div class="block4-img">
+                                    <img src="images/pop-post/block4-img.jpeg" width="100%" height="100%" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="block1-title">Teacher Eligibility Test Qualifying Certificate Valid For
+                                Lifetime: Government.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop-tags">
+                    <p class="pop-tags-title">Popular Tags</p>
+                    <div class="pop-tags-link">
+                        <a href=""><button class="pop-tags-btn-sm">Technology</button></a>
+                        <a href=""><button class="pop-tags-btn-sm">sports</button></a>
+                        <a href=""><button class="pop-tags-btn-sm">current affeirs</button></a>
+                        <a href=""><button class="pop-tags-btn-sm">live update</button></a>
+                        <a href=""><button class="pop-tags-btn-sm">shopping</button></a>
+                        <a href=""><button class="pop-tags-btn-sm">food</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer html start -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="top-footer">
+                <div class="about">
+                    <p class="footer-grid-title">About us</p>
+                    <div class="about-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, maxime quos
+                        facere maiores dolorum minus! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Provident expedita quasi fugit nobis eligendi perferendis hic neque error molestias debitis.
+                    </div>
+                </div>
+                <div class="newslatter">
+                    <p class="footer-grid-title">Newsletter</p>
+                    <div class="news-letter-box">
+                        <p>Stay update with our latest News</p>
+                        <div class="email-box">
+                            <input type="email" name="email" id="email" placeholder="Email"><br>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="socialmedia">
+                    <p class="footer-grid-title">Follow us</p>
+                    <div class="socialmedia-box">
+                        <p>Let Connect with Social Media</p>
+                        <div class="icons">
+                            <a href=""><img src="icon/facebook-f-brands.svg" alt="facebook"></a>
+                            <a href=""><img src="icon/instagram-brands.svg" alt="instagram"></a>
+                            <a href=""><img src="icon/twitter-brands.svg" alt="twitter"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="uparrow">
+                    <a href="" class="arrow"><img src="icon/arrow-up-solid.svg" alt="Gouparrow" ></a>
+                </div>
+            </div>
+            <hr>
+            <div class="bottom-footer">
+                <p>Copyright &copy 2021- All Rights Reserved | Made by <a href="https://www.instagram.com/rkvarma4518/" class="devloper-name">rkvarma4518</a>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    
+    <script src="js/main.js"></script>
+
+</body>
+</html>
